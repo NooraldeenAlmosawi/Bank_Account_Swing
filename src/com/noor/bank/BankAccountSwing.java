@@ -356,6 +356,12 @@ public class BankAccountSwing {
 		panelPrint.add(btnPrint);
 		
 		JButton btnBackPrint = new JButton("Back");
+		btnBackPrint.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panelPrint.setVisible(false);
+				panel.setVisible(true);
+			}
+		});
 		btnBackPrint.setForeground(Color.WHITE);
 		btnBackPrint.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		btnBackPrint.setBackground(SystemColor.activeCaption);
