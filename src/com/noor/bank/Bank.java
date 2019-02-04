@@ -43,8 +43,9 @@ public class Bank {
 				accounts[i].deposit(amount);
 
 			}
+			else{JOptionPane.showMessageDialog(null, "Account number not found.");}
+
 		}
-		JOptionPane.showMessageDialog(null, "Account number not found.");
 	}
 
 //Prints the account number, If the account is not available at the bank, it should print a message.
