@@ -24,7 +24,6 @@ import javax.swing.JTabbedPane;
 public class BankAccountSwing {
 	Bank myBank = new Bank();
 
-
 	private JFrame frame;
 	private JTextField txtName;
 	private JTextField txtOpBal;
@@ -112,17 +111,18 @@ public class BankAccountSwing {
 				if (rdbtnDeposit.isSelected()) {
 					panel.setVisible(false);
 					panelDeposit.setVisible(true);
-					
+
 				}
 				if (rdbtnWithdraw.isSelected()) {
-					
+
 					panel.setVisible(false);
 					panelWithdraw.setVisible(true);
-					
+
 				}
 				if (rdbtnNewPrint.isSelected()) {
 					panel.setVisible(false);
-					panelPrint.setVisible(true);				}
+					panelPrint.setVisible(true);
+				}
 
 			}
 		});
@@ -173,18 +173,18 @@ public class BankAccountSwing {
 		btnOpSubmit.setBackground(SystemColor.activeCaption);
 		btnOpSubmit.setBounds(105, 268, 137, 45);
 		panelOpen.add(btnOpSubmit);
-		
+
 		btnOpSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String s1=txtName.getText();
-				String s2=txtOpBal.getText();
-				Double da = Double.parseDouble(s2);		
-				JOptionPane.showMessageDialog(null, "Account was created and it has the following number: " 
-				+ myBank.createNewAccount(s1, da));
-				
-				}
+				String s1 = txtName.getText();
+				String s2 = txtOpBal.getText();
+				Double da = Double.parseDouble(s2);
+				JOptionPane.showMessageDialog(null,
+						"Account was created and it has the following number: " + myBank.createNewAccount(s1, da));
+
+			}
 		});
-		
+
 		JButton btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -197,101 +197,98 @@ public class BankAccountSwing {
 		btnBack.setBackground(SystemColor.activeCaption);
 		btnBack.setBounds(351, 268, 137, 45);
 		panelOpen.add(btnBack);
-		
-		 panelDeposit = new JPanel();
+
+		panelDeposit = new JPanel();
 		frame.getContentPane().add(panelDeposit, "name_423193276991598");
 		panelDeposit.setLayout(null);
-		
+
 		JLabel label = new JLabel("Please Fill in the following fields");
 		label.setFont(new Font("Segoe UI Black", Font.PLAIN, 16));
 		label.setBounds(42, 29, 259, 20);
 		panelDeposit.add(label);
-		
+
 		txtAccountDep = new JTextField();
 		txtAccountDep.setColumns(10);
 		txtAccountDep.setBounds(211, 106, 244, 45);
 		panelDeposit.add(txtAccountDep);
-		
+
 		JLabel lblAccountNumber = new JLabel("Account Number");
 		lblAccountNumber.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblAccountNumber.setBounds(28, 116, 157, 20);
 		panelDeposit.add(lblAccountNumber);
-		
+
 		txtDepAmount = new JTextField();
 		txtDepAmount.setColumns(10);
 		txtDepAmount.setBounds(211, 167, 244, 45);
 		panelDeposit.add(txtDepAmount);
-		
+
 		JLabel lblDepositAmount = new JLabel("Deposit Amount");
 		lblDepositAmount.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblDepositAmount.setBounds(39, 172, 169, 31);
 		panelDeposit.add(lblDepositAmount);
-		
+
 		JButton btnDeposit = new JButton("Deposit");
 		btnDeposit.setForeground(Color.WHITE);
 		btnDeposit.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		btnDeposit.setBackground(SystemColor.activeCaption);
 		btnDeposit.setBounds(106, 263, 137, 45);
 		panelDeposit.add(btnDeposit);
-		
+
 		btnDeposit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String s3=txtAccountDep.getText();
-				Integer d1=Integer.parseInt(s3);
-				String s4=txtDepAmount.getText();
-				Double d2=Double.parseDouble(s4);
-				
+				String s3 = txtAccountDep.getText();
+				Integer d1 = Integer.parseInt(s3);
+				String s4 = txtDepAmount.getText();
+				Double d2 = Double.parseDouble(s4);
+
 				myBank.depositTo(d1, d2);
 			}
-			
+
 		});
-		
+
 		JButton btnBackDep = new JButton("Back");
 		btnBackDep.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panelDeposit.setVisible(false);
 				panel.setVisible(true);
 			}
-			
+
 		});
 		btnBackDep.setForeground(Color.WHITE);
 		btnBackDep.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		btnBackDep.setBackground(SystemColor.activeCaption);
 		btnBackDep.setBounds(352, 263, 137, 45);
 		panelDeposit.add(btnBackDep);
-		
-		
-		
-		
-		 panelWithdraw = new JPanel();
+
+		panelWithdraw = new JPanel();
 		frame.getContentPane().add(panelWithdraw, "name_423562562090214");
 		panelWithdraw.setLayout(null);
-		
+
 		JLabel label_1 = new JLabel("Please Fill in the following fields");
 		label_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 16));
 		label_1.setBounds(63, 27, 259, 20);
 		panelWithdraw.add(label_1);
-		
+
 		JLabel label_2 = new JLabel("Account Number");
 		label_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		label_2.setBounds(49, 114, 157, 20);
 		panelWithdraw.add(label_2);
-		
+
 		txtAccountWith = new JTextField();
 		txtAccountWith.setColumns(10);
 		txtAccountWith.setBounds(232, 104, 244, 45);
 		panelWithdraw.add(txtAccountWith);
-		
+
 		JLabel lblWithdrawAmount = new JLabel("WithDraw Amount");
 		lblWithdrawAmount.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblWithdrawAmount.setBounds(36, 170, 169, 31);
 		panelWithdraw.add(lblWithdrawAmount);
-		
+
 		txtWithAmount = new JTextField();
 		txtWithAmount.setColumns(10);
 		txtWithAmount.setBounds(232, 165, 244, 45);
 		panelWithdraw.add(txtWithAmount);
-		
+
 		JButton button = new JButton("Back");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -304,49 +301,48 @@ public class BankAccountSwing {
 		button.setBackground(SystemColor.activeCaption);
 		button.setBounds(373, 261, 137, 45);
 		panelWithdraw.add(button);
-		
+
 		JButton btnWithDraw = new JButton("WithDraw");
 		btnWithDraw.setForeground(Color.WHITE);
 		btnWithDraw.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		btnWithDraw.setBackground(SystemColor.activeCaption);
 		btnWithDraw.setBounds(127, 261, 137, 45);
-		
-		rdbtnWithdraw.addActionListener(new ActionListener() {
+
+		btnWithDraw.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String s5=txtWithAmount.getText();
-				Integer d3=Integer.parseInt(s5);
-				String s6=txtDepAmount.getText();
-				Double d4=Double.parseDouble(s6);
-				
+				String s5 = txtAccountWith.getText();
+				Integer d3 = Integer.parseInt(s5);
+				String s6 = txtWithAmount.getText();
+				Double d4 = Double.parseDouble(s6);
+
 				myBank.withdrawFrom(d3, d4);
-				
+
 			}
 		});
 		panelWithdraw.add(btnWithDraw);
-		
-		 panelPrint = new JPanel();
+
+		panelPrint = new JPanel();
 		frame.getContentPane().add(panelPrint, "name_3494909469523");
 		panelPrint.setLayout(null);
-		
+
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(212, 41, 244, 45);
+		textField.setBounds(212, 82, 244, 45);
 		panelPrint.add(textField);
-		
+
 		JLabel label_3 = new JLabel("Account Number");
 		label_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		label_3.setBounds(29, 51, 157, 20);
+		label_3.setBounds(29, 92, 157, 20);
 		panelPrint.add(label_3);
-		
+
 		JButton btnPrint = new JButton("Print");
 		btnPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			String aa=textField.getText();
-			Integer ii=Integer.parseInt(aa);
-			
-			myBank.printAccountInfo(ii);
+				String aa = textField.getText();
+				Integer ii = Integer.parseInt(aa);
 
-			
+				myBank.printAccountInfo(ii);
+
 			}
 		});
 		btnPrint.setForeground(Color.WHITE);
@@ -354,25 +350,20 @@ public class BankAccountSwing {
 		btnPrint.setBackground(SystemColor.activeCaption);
 		btnPrint.setBounds(107, 240, 137, 45);
 		panelPrint.add(btnPrint);
-		
+
 		JButton btnBackPrint = new JButton("Back");
-		btnBackPrint.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				panelPrint.setVisible(false);
-				panel.setVisible(true);
-			}
-		});
 		btnBackPrint.setForeground(Color.WHITE);
 		btnBackPrint.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		btnBackPrint.setBackground(SystemColor.activeCaption);
 		btnBackPrint.setBounds(353, 240, 137, 45);
 		panelPrint.add(btnBackPrint);
-		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(68, 102, 422, 122);
-		panelPrint.add(lblNewLabel_2);
-		
-		
-		
+		btnBackPrint.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panelPrint.setVisible(false);
+				panel.setVisible(true);
+				
+			}
+		});
+
 	}
 }

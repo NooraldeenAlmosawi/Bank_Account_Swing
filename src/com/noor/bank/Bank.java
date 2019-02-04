@@ -29,10 +29,10 @@ public class Bank {
 			if (accountNum == accounts[i].getAccountNum()) {
 				accounts[i].withdraw(amount);
 				
-				return;
+			} else {
+				JOptionPane.showMessageDialog(null, "Account number not found.");
 			}
 		}
-		JOptionPane.showMessageDialog(null,"Account number not found.");
 
 	}
 
@@ -41,22 +41,22 @@ public class Bank {
 		for (int i = 0; i < numOfAccounts; i++) {
 			if (accountNum == accounts[i].getAccountNum()) {
 				accounts[i].deposit(amount);
-				
-				return;
+
 			}
 		}
-		JOptionPane.showMessageDialog(null,"Account number not found.");
+		JOptionPane.showMessageDialog(null, "Account number not found.");
 	}
 
 //Prints the account number, If the account is not available at the bank, it should print a message.
 	public void printAccountInfo(int accountNum) {
 		for (int i = 0; i < numOfAccounts; i++) {
 			if (accountNum == accounts[i].getAccountNum()) {
-				System.out.println(accounts[i].getAccountInfo());
-				return ;
+				JOptionPane.showMessageDialog(null, accounts[i].getAccountInfo());
+
+			} else {
+				JOptionPane.showMessageDialog(null, "Account number not found.");
 			}
 		}
-		JOptionPane.showMessageDialog(null,"Account number not found.");
 	}
 
 }
