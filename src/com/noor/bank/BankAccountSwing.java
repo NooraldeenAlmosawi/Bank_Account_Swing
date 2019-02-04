@@ -67,7 +67,7 @@ public class BankAccountSwing {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
-		frame.setBounds(300, 100, 600, 400);
+		frame.setBounds(450, 100, 600, 400);
 
 		panel = new JPanel();
 		frame.getContentPane().add(panel, "name_421286544739694");
